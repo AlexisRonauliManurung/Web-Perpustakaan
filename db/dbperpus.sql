@@ -1,31 +1,7 @@
--- phpMyAdmin SQL Dump
--- version 3.4.5
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Waktu pembuatan: 18. Januari 2019 jam 10:42
--- Versi Server: 5.5.16
--- Versi PHP: 5.3.8
-
+CREATE DATABASE dbperpus;
+USE dbperpus;
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `dbperpus`
---
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `buku`
---
-
 CREATE TABLE IF NOT EXISTS `buku` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `loker_buku` varchar(25) NOT NULL,
@@ -41,11 +17,6 @@ CREATE TABLE IF NOT EXISTS `buku` (
   `keterangan` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT AUTO_INCREMENT=42 ;
-
---
--- Dumping data untuk tabel `buku`
---
-
 INSERT INTO `buku` (`id`, `loker_buku`, `no_rak`, `no_laci`, `no_boks`, `judul_buku`, `nama_pengarang`, `tahun_terbit`, `penerima`, `penerbit`, `status`, `keterangan`) VALUES
 (20, 'Buku Anak Anak', 22, 23, 24, 'Mari Belajar Gembira', 'Swedio', '2019-12-31', 'Herman', 'CV. Petir', 'Ada', '10'),
 (22, 'Buku Anak Anak', 89, 898, 989, 'Majalah Genie', 'Mahkamah', '2019-12-31', 'Permata', 'CV. Badai', 'Ada', '12'),
@@ -67,13 +38,6 @@ INSERT INTO `buku` (`id`, `loker_buku`, `no_rak`, `no_laci`, `no_boks`, `judul_b
 (39, 'Buku Anak Anak', 14, 14, 14, 'Mengenal Hewan', 'Astuti', '2019-01-06', 'Tk zahira', 'Aksara', 'Ada', '12345678'),
 (40, 'Buku Anak Anak', 15, 15, 15, '4 sehat 5 sempurna', 'tri aksara', '2019-01-02', 'Tk zahira', 'Elfata Andi', 'Ada', '12345678'),
 (41, 'Buku Anak Anak', 16, 16, 16, 'Lingkungan sehat', 'roro tri muji', '2019-01-09', 'Tk zahira', 'Andalas', 'Ada', '12345678');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `peminjaman`
---
-
 CREATE TABLE IF NOT EXISTS `peminjaman` (
   `judul_buku` varchar(50) NOT NULL,
   `peminjam` varchar(50) NOT NULL,
@@ -84,21 +48,9 @@ CREATE TABLE IF NOT EXISTS `peminjaman` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
-
---
--- Dumping data untuk tabel `peminjaman`
---
-
 INSERT INTO `peminjaman` (`judul_buku`, `peminjam`, `tgl_pinjam`, `tgl_kembali`, `lama_pinjam`, `keterangan`, `id`) VALUES
-('Kancil dan Buaya', 'Kamil', '2018-12-03', '2018-12-19', 16, 'Untuk Anak', 9),
-('hidup sehat', 'Yanto', '2019-01-15', '2019-01-17', 2, 'untuk anak', 10);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `user`
---
-
+('Kancil dan Buaya', 'alexis', '2018-12-03', '2018-12-19', 16, 'Untuk Anak', 9),
+('hidup sehat', 'putu', '2019-01-15', '2019-01-17', 2, 'untuk anak', 10);
 CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(25) NOT NULL,
   `paswd` varchar(50) NOT NULL,
@@ -108,14 +60,5 @@ CREATE TABLE IF NOT EXISTS `user` (
   `ket` varchar(50) NOT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `user`
---
-
 INSERT INTO `user` (`username`, `paswd`, `email`, `nama`, `level`, `ket`) VALUES
-('admin', '21232f297a57a5a743894a0e4a801fc3', 'afifsirait@gmail.com', 'Muhammad Afifurrahman', 1, 'Staff Perpustakaan');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+('admin', '212320', 'alexisronauli@gmail.com', 'Alexis Ronauli', 1, 'Staff Perpustakaan');
