@@ -17,8 +17,8 @@
                 <div class="col-sm-12">
                     <!--dalam tabel-->
                     <div class="text-center">
-                        <h2>Sistem Informasi Perpustakaan Zahira Kisaran </h2>
-                        <h4>Jalan Ranti, Kisaran <br> Kisaran Timur, Kabupaten Asahan, Sumatera Utara, 21223</h4>
+                        <h2>Sistem Informasi Perpustakaan </h2>
+                        <h4>Jalan Bumi Manti <br> Bandar Lampung, Lampung </h4>
                         <hr>
                         <h3>DATA PEMINJAMAN BUKU TAHUN   <? echo "$ambilthn"; ?></h3>
                         <table class="table table-bordered table-striped table-hover">
